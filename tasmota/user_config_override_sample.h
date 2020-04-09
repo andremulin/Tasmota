@@ -88,8 +88,15 @@ Examples :
 
 */
 
-
-
-
+#ifndef USE_MQTT_TLS
+#define USE_MQTT_TLS
+#define USE_MQTT_TLS_CA_CERT // Optional but highly recommended
+#endif
+#ifndef USE_MQTT_AWS_IOT
+#define USE_MQTT_AWS_IOT
+#endif
+#ifdef USE_DISCOVERY
+#undef USE_DISCOVERY
+#endif
 
 #endif  // _USER_CONFIG_OVERRIDE_H_
